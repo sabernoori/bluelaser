@@ -1,0 +1,10 @@
+.search_wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.search_wrapper[style*="display: block"] {
+    opacity: 1;
+    visibility: visible;
+}

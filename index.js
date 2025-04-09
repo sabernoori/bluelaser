@@ -1,4 +1,4 @@
-console.log("index connected4");
+console.log("index connected5");
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get the search trigger and wrapper elements
@@ -135,8 +135,8 @@ const articlesSwiper = new Swiper('.swiper.is-articles', {
                 }
             },
             navigation: {
-                nextEl: '.products-next',
-                prevEl: '.products-prev',
+                nextEl: productsSwiperEl.querySelector('.products-next'),
+                prevEl: productsSwiperEl.querySelector('.products-prev'),
             },
             // Add observer for CMS dynamic content
             observer: true,

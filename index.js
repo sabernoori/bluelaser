@@ -1,4 +1,4 @@
-console.log("index connected6");
+console.log("index connected8");
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get the search trigger and wrapper elements
@@ -95,14 +95,14 @@ const articlesSwiper = new Swiper('.swiper.is-articles', {
             spaceBetween: 20,
         }
     },
-     navigation: {
-        nextEl: '.next.is-articles',
-        prevEl: '.prev.is-articles',
+    navigation: {
+        nextEl: '.articles-next',
+        prevEl: '.articles-prev',
     }, 
-         // Add observer for CMS dynamic content
-        observer: true,
-        observeParents: true,
-        observeSlideChildren: true,
+    // Add observer for CMS dynamic content
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true,
 });
 
     // Initialize Products Swiper with error handling
@@ -135,8 +135,8 @@ const articlesSwiper = new Swiper('.swiper.is-articles', {
                 }
             },
             navigation: {
-                nextEl: productsSwiperEl.querySelector('.next.is-products'),
-                prevEl: productsSwiperEl.querySelector('.prev.is-products'),
+                nextEl: '.products-next',
+                prevEl: '.products-prev',
             },
             // Add observer for CMS dynamic content
             observer: true,

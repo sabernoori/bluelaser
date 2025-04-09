@@ -1,4 +1,4 @@
-console.log("index connected");
+console.log("index connected2");
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get the search trigger and wrapper elements
@@ -68,46 +68,50 @@ const gallerySlider = new Swiper(".swiper.is-gallery", {
 
 //
 
+// Initialize Articles Swiper with scoped navigation selectors
+const articlesContainer = document.querySelector('.section_blog');
+if (articlesContainer) {
+    const articlesSwiper = new Swiper(articlesContainer.querySelector('.swiper.is-articles'), {
+        loop: true,
+        slidesPerView: 1.2,
+        spaceBetween: 24,
+        breakpoints: {
+            // Mobile
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            // Landscape
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            // Tablet
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+            // Desktop (default)
+            1200: {
+                slidesPerView: 4, // Adjust as needed for larger screens
+                spaceBetween: 20,
+            }
+        },
+        navigation: {
+            nextEl: articlesContainer.querySelector('.next.is-articles'),
+            prevEl: articlesContainer.querySelector('.prev.is-articles'),
+        },
+        // Add observer for CMS dynamic content
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+    });
+}
 
-const articlesSwiper = new Swiper('.swiper.is-articles', {
-    loop: true,
-    slidesPerView: 1.2,
-    spaceBetween: 24,
-    breakpoints: {
-        // Mobile
-        480: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-        },
-        // Landscape
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-        },
-        // Tablet
-        992: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-        },
-        // Desktop (default)
-        1200: {
-            slidesPerView: 4, // Adjust as needed for larger screens
-            spaceBetween: 20,
-        }
-    },
-    navigation: {
-        nextEl: '.swiper.is-articles .next.is-articles',
-        prevEl: '.swiper.is-articles .prev.is-articles',
-    },
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
-});
-
-// Initialize Products Swiper with error handling
-const productsSwiperEl = document.querySelector('.swiper.is-products');
-if (productsSwiperEl) {
-    const productsSwiper = new Swiper(productsSwiperEl, {
+// Initialize Products Swiper with scoped navigation selectors
+const productsContainer = document.querySelector('.section_products');
+if (productsContainer) {
+    const productsSwiper = new Swiper(productsContainer.querySelector('.swiper.is-products'), {
         loop: true,
         slidesPerView: 1.2,
         spaceBetween: 24,
@@ -134,9 +138,10 @@ if (productsSwiperEl) {
             }
         },
         navigation: {
-            nextEl: '.swiper.is-products .next.is-products',
-            prevEl: '.swiper.is-products .prev.is-products',
+            nextEl: productsContainer.querySelector('.next.is-products'),
+            prevEl: productsContainer.querySelector('.prev.is-products'),
         },
+        // Add observer for CMS dynamic content
         observer: true,
         observeParents: true,
         observeSlideChildren: true,

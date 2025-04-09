@@ -1,0 +1,31 @@
+.swiper.is-machines {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.swiper-wrapper.is-machines {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide.is-machines {
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide.is-machines:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 991px) {
+  .swiper-slide.is-machines {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-slide.is-machines {
+    width: auto;
+  }
+}

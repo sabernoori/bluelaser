@@ -1,4 +1,3 @@
-console.log("index connected8");
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get the search trigger and wrapper elements

@@ -55,57 +55,54 @@ document.addEventListener('DOMContentLoaded', function() {
 /////////////////////////////swiper for related products and articles/////////////////////////////
 
 document.addEventListener('DOMContentLoaded', function() {
-//
-const gallerySlider = new Swiper(".swiper.is-gallery", {
-  // Parameters
-  loop: true,
-  slidesPerView: 2,
-  centeredSlides: true,
-  speed: 800,
-  grabCursor: true,
-  parallax: true
-});
+    // Initialize Gallery Slider
+    const gallerySlider = new Swiper(".swiper.is-gallery", {
+        loop: true,
+        slidesPerView: 2,
+        centeredSlides: true,
+        speed: 800,
+        grabCursor: true,
+        parallax: true
+    });
 
-//
-
-
-const articlesSwiper = new Swiper('.swiper.is-articles', {
-    loop: true,
-    slidesPerView: 1.2,
-    spaceBetween: 24,
-    breakpoints: {
-        // Mobile
-        480: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-        },
-        // Landscape
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 16,
-        },
-        // Tablet
-        992: {
-            slidesPerView: 3,
+    // Initialize Articles Swiper
+    const articlesSwiperEl = document.querySelector('.swiper.is-articles');
+    if (articlesSwiperEl) {
+        const articlesSwiper = new Swiper(articlesSwiperEl, {
+            loop: true,
+            slidesPerView: 1.2,
             spaceBetween: 24,
-        },
-        // Desktop (default)
-        1200: {
-            slidesPerView: 4, // Adjust as needed for larger screens
-            spaceBetween: 20,
-        }
-    },
-    navigation: {
-        nextEl: '.articles-next',
-        prevEl: '.articles-prev',
-    }, 
-    // Add observer for CMS dynamic content
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
-});
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                }
+            },
+            navigation: {
+                nextEl: '.articles-next',
+                prevEl: '.articles-prev',
+            },
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+        });
+    } else {
+        console.warn('Articles swiper element not found');
+    }
 
-    // Initialize Products Swiper with error handling
+    // Initialize Products Swiper
     const productsSwiperEl = document.querySelector('.swiper.is-products');
     if (productsSwiperEl) {
         const productsSwiper = new Swiper(productsSwiperEl, {
@@ -113,22 +110,18 @@ const articlesSwiper = new Swiper('.swiper.is-articles', {
             slidesPerView: 1.2,
             spaceBetween: 24,
             breakpoints: {
-                // Mobile
                 480: {
                     slidesPerView: 2,
                     spaceBetween: 16,
                 },
-                // Landscape
                 768: {
                     slidesPerView: 2,
                     spaceBetween: 16,
                 },
-                // Tablet
                 992: {
                     slidesPerView: 3,
                     spaceBetween: 24,
                 },
-                // Desktop (default)
                 1200: {
                     slidesPerView: 4,
                     spaceBetween: 20,
@@ -138,7 +131,6 @@ const articlesSwiper = new Swiper('.swiper.is-articles', {
                 nextEl: '.products-next',
                 prevEl: '.products-prev',
             },
-            // Add observer for CMS dynamic content
             observer: true,
             observeParents: true,
             observeSlideChildren: true,
@@ -148,4 +140,3 @@ const articlesSwiper = new Swiper('.swiper.is-articles', {
     }
 });
 
- 
